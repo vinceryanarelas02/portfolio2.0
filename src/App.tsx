@@ -190,7 +190,7 @@ function App() {
               </div>
               <div className="border-l-4 border-red-500 pl-4 py-2 bg-red-500/5">
                 <p className="text-green-300 text-lg leading-relaxed font-mono">
-                  Building robust and scalable server-side solutions. Architecting the digital infrastructure of tomorrow.
+                  You're part of the problem that i can't let you leave
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -258,11 +258,9 @@ function App() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-scan-horizontal"></div>
 
               <p className="text-green-300 text-lg leading-relaxed mb-6 font-mono">
-                {'> '} I'm a passionate back end developer specializing in building scalable, secure, and efficient server-side applications. With expertise in modern frameworks and databases, I transform complex requirements into elegant solutions.
+                {'> '} I'm Vince Ryan Arelas a 3rd Year BSIT students who likes to learn more about coding and technologies.
               </p>
-              <p className="text-green-300 text-lg leading-relaxed mb-6 font-mono">
-                {'> '} My approach combines technical excellence with a deep understanding of business needs, ensuring that every project delivers real value. I thrive on solving challenging problems and continuously learning new technologies.
-              </p>
+             
 
               <div className="grid md:grid-cols-2 gap-6 mt-8">
                 <div className="space-y-4 border-2 border-red-500/30 p-6 bg-red-500/5">
@@ -271,7 +269,7 @@ function App() {
                     {'[TECHNICAL_STACK]'}
                   </h3>
                   <div className="space-y-2">
-                    {['Node.js & Express', 'Python & Django', 'Database Design', 'API Development', 'Cloud Services', 'System Architecture'].map((skill) => (
+                    {['Node.js & Express', 'Python', 'Database Design', 'API Development'].map((skill) => (
                       <div key={skill} className="flex items-center space-x-2 group/item">
                         <div className="w-2 h-2 bg-red-500 animate-pulse"></div>
                         <span className="text-green-400 font-mono text-sm group-hover/item:text-red-400 transition-colors">{'> '}{skill}</span>
@@ -286,7 +284,7 @@ function App() {
                     {'[CORE_SYSTEMS]'}
                   </h3>
                   <div className="space-y-2">
-                    {['RESTful APIs', 'Microservices', 'Performance Optimization', 'Security Protocols', 'DevOps & CI/CD', 'Agile Development'].map((competency) => (
+                    {['RESTful APIs','Security Protocols','Agile Development'].map((competency) => (
                       <div key={competency} className="flex items-center space-x-2 group/item">
                         <div className="w-2 h-2 bg-red-500 animate-pulse animation-delay-500"></div>
                         <span className="text-green-400 font-mono text-sm group-hover/item:text-red-400 transition-colors">{'> '}{competency}</span>
@@ -316,41 +314,12 @@ function App() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: 'E-Commerce API',
-                  description: 'Scalable RESTful API handling 10K+ daily transactions with advanced caching and optimization.',
-                  tech: ['Node.js', 'PostgreSQL', 'Redis'],
+                  title: 'ToDos',
+                  description: 'First Project/Activity.',
+                  tech: ['Node.js, API'],
                   status: 'ACTIVE'
                 },
-                {
-                  title: 'Real-time Analytics Platform',
-                  description: 'High-performance data processing system with WebSocket integration for live dashboards.',
-                  tech: ['Python', 'MongoDB', 'WebSockets'],
-                  status: 'DEPLOYED'
-                },
-                {
-                  title: 'Authentication Service',
-                  description: 'Secure microservice architecture with JWT, OAuth, and multi-factor authentication.',
-                  tech: ['Express', 'JWT', 'OAuth2'],
-                  status: 'SECURE'
-                },
-                {
-                  title: 'Payment Gateway Integration',
-                  description: 'Robust payment processing system with multiple provider integrations and fraud detection.',
-                  tech: ['Stripe', 'Node.js', 'MySQL'],
-                  status: 'LIVE'
-                },
-                {
-                  title: 'Content Management System',
-                  description: 'Headless CMS with GraphQL API supporting multi-tenant architecture and role-based access.',
-                  tech: ['GraphQL', 'PostgreSQL', 'Docker'],
-                  status: 'RUNNING'
-                },
-                {
-                  title: 'Notification Service',
-                  description: 'Distributed message queue system handling millions of notifications across multiple channels.',
-                  tech: ['RabbitMQ', 'Redis', 'AWS'],
-                  status: 'ONLINE'
-                }
+  
               ].map((project, index) => (
                 <div
                   key={index}
@@ -412,7 +381,7 @@ function App() {
 
               <div className="grid md:grid-cols-3 gap-6 mb-12">
                 <a
-                  href="mailto:vinceryan@example.com"
+                  href="vincearelas033@gmail.com"
                   className="flex flex-col items-center p-6 bg-red-500/5 rounded-none border-2 border-red-500/30 hover:border-red-500 hover:bg-red-500/10 transition-all hover:scale-105 group relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-red-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -420,7 +389,7 @@ function App() {
                   <span className="text-green-400 text-sm font-mono relative z-10">{'[EMAIL]'}</span>
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/vinceryanarelas02?tab=repositories"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center p-6 bg-red-500/5 rounded-none border-2 border-red-500/30 hover:border-red-500 hover:bg-red-500/10 transition-all hover:scale-105 group relative overflow-hidden"
