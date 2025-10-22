@@ -3,27 +3,27 @@
 @tailwind utilities;
 
 @layer utilities {
-  @keyframes blob {
+  @keyframes float {
     0%, 100% {
       transform: translate(0, 0) scale(1);
     }
     25% {
-      transform: translate(20px, -50px) scale(1.1);
+      transform: translate(30px, -60px) scale(1.1);
     }
     50% {
-      transform: translate(-20px, 20px) scale(0.9);
+      transform: translate(-30px, 30px) scale(0.9);
     }
     75% {
-      transform: translate(50px, 10px) scale(1.05);
+      transform: translate(60px, 15px) scale(1.05);
     }
   }
 
-  @keyframes gradient {
-    0%, 100% {
-      background-position: 0% 50%;
+  @keyframes scanline {
+    0% {
+      transform: translateY(0);
     }
-    50% {
-      background-position: 100% 50%;
+    100% {
+      transform: translateY(100%);
     }
   }
 
@@ -33,17 +33,6 @@
     }
     to {
       opacity: 1;
-    }
-  }
-
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 
@@ -69,13 +58,97 @@
     }
   }
 
-  .animate-blob {
-    animation: blob 7s infinite;
+  @keyframes glitch {
+    0% {
+      transform: translate(0);
+      filter: hue-rotate(0deg);
+    }
+    20% {
+      transform: translate(-2px, 2px);
+      filter: hue-rotate(90deg);
+    }
+    40% {
+      transform: translate(-2px, -2px);
+      filter: hue-rotate(180deg);
+    }
+    60% {
+      transform: translate(2px, 2px);
+      filter: hue-rotate(270deg);
+    }
+    80% {
+      transform: translate(2px, -2px);
+      filter: hue-rotate(360deg);
+    }
+    100% {
+      transform: translate(0);
+      filter: hue-rotate(0deg);
+    }
   }
 
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient 3s ease infinite;
+  @keyframes border-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scan-horizontal {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  @keyframes scanline-slow {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.7;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-float {
+    animation: float 8s infinite ease-in-out;
+  }
+
+  .animate-scanline {
+    animation: scanline 8s linear infinite;
+  }
+
+  .animation-delay-1000 {
+    animation-delay: 1s;
   }
 
   .animation-delay-2000 {
@@ -86,12 +159,12 @@
     animation-delay: 4s;
   }
 
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-in-out;
+  .animation-delay-500 {
+    animation-delay: 0.5s;
   }
 
-  .animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out;
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
   }
 
   .animate-slideInLeft {
@@ -101,8 +174,85 @@
   .animate-slideInRight {
     animation: slideInRight 0.8s ease-out;
   }
+
+  .glitch-text {
+    position: relative;
+    text-shadow:
+      0 0 10px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.6),
+      0 0 30px rgba(255, 0, 0, 0.4);
+  }
+
+  .glitch-text:hover {
+    animation: glitch 0.3s infinite;
+  }
+
+  .glow-text {
+    text-shadow:
+      0 0 10px rgba(255, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.6),
+      0 0 30px rgba(255, 0, 0, 0.4),
+      0 0 40px rgba(255, 0, 0, 0.2);
+  }
+
+  .animate-border-spin {
+    animation: border-spin 4s linear infinite;
+  }
+
+  .animate-scan-horizontal {
+    animation: scan-horizontal 3s linear infinite;
+  }
+
+  .animate-scanline-slow {
+    animation: scanline-slow 5s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .typing-effect {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40, end);
+  }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background: #000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+}
+
+/* Custom scrollbar for Matrix theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+  border-left: 1px solid rgba(255, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.5);
+  border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+/* Matrix text selection */
+::selection {
+  background: rgba(255, 0, 0, 0.3);
+  color: #00ff00;
 }
